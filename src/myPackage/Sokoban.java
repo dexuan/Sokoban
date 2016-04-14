@@ -353,11 +353,10 @@ public class Sokoban {
 				
 				if(temp==8&&map[i+1][j+1]==3){
 					int numOf1=0;
-					for(int l=0;l<3;l++){
-						for(int k=0;k<3;k++){
-							if(map[i+l][j+k]==1)numOf1++;
-						}
-					}
+					if(map[i+1][j]==1)numOf1++;
+					if(map[i+2][j+1]==1)numOf1++;
+					if(map[i+1][j+2]==1)numOf1++;
+
 					if(numOf1>1)return "3*3GameOver";
 				}
 				
