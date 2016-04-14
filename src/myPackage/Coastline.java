@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Coastline {
 	private int Y = Constant.Y;
+	@SuppressWarnings("static-access")
 	private int C = new Constant().C;//±ØÐënew
 	public Sokoban[] mySokoban= new Sokoban[Y];
 
@@ -14,6 +15,7 @@ public class Coastline {
 	int keyNum = 0;
 	Scanner S = new Scanner(System.in);
 
+	@SuppressWarnings("static-access")
 	public Coastline(){
 		
 		for(int i=0;i<Constant.Q;i++){
@@ -36,6 +38,7 @@ public class Coastline {
 		long time = System.currentTimeMillis();
 		long timeLength = -1;
 		
+		@SuppressWarnings("unused")
 		int i = 1;
 		for(i=1;1!=0;i++){
 			if(step==0)break;
