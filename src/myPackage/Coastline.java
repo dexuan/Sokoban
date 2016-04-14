@@ -56,11 +56,14 @@ public class Coastline {
 			if(tryValue){
 				String info = mySokoban[step].sokobanInfo;
 				boolean isACycle = thereIsACycle();
-				//mySokoban[step].printMapAvastar();
-				//System.out.println("循环"+i);
-				//System.out.println("步数为："+step+"方向为："+direction4C);
-				//System.out.println("判定为"+info+"\n成环？："+isACycle);
+				
+				//
+//				mySokoban[step].printMapAvastar();
+//				System.out.println("循环"+i);
+//				System.out.println("步数为："+step+"方向为："+direction4C);
+//				System.out.println("判定为"+info+"\n成环？："+isACycle);
 				//S.nextLine();
+				//
 				
 				if(isACycle){
 					changeDirectionAndStep();
@@ -94,36 +97,42 @@ public class Coastline {
 			}
 				
 		}
-		System.out.println("用时"+timeLength/1000+"秒找到第一条答案");
-		System.out.println("最短答案的步数为："+key[0][0]+"步");
-		System.out.println("2秒后开始演示");
-		for(int j=0;j<20;j++){
-			System.out.print("▌");
-			try {
-				Thread.sleep(100);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		if(key[0][0]<0){
+			System.out.println("未找到答案");
 		}
-		System.out.print("\n\n");
-		Sokoban showSokoban = new Sokoban();
-		showSokoban.setMapAndLaunchAvatar(new Constant().initialMap);
-		showSokoban.printMap();
-		for(int j=1;j<=key[0][0];j++){
-			try {
-				Thread.sleep(600);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+		else{
+			System.out.println("用时"+timeLength/1000+"秒找到第一条答案");
+			System.out.println("最短答案的步数为："+key[0][0]+"步");
+			System.out.println("2秒后开始演示");
+			for(int j=0;j<20;j++){
+				System.out.print("▌");
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
-			
-			showSokoban.tryToPush4C(key[0][j]);
+			System.out.print("\n\n");
+			Sokoban showSokoban = new Sokoban();
+			showSokoban.setMapAndLaunchAvatar(new Constant().initialMap);
 			showSokoban.printMap();
-			
-			//System.out.println(key[0][j]);
+			for(int j=1;j<=key[0][0];j++){
+				try {
+					Thread.sleep(600);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				showSokoban.tryToPush4C(key[0][j]);
+				showSokoban.printMap();
+				
+				//System.out.println(key[0][j]);
+			}
+			System.out.println("Complete!");
 		}
-		System.out.println("Complete!");
+		
 	}
 	
 	private boolean newKey() {
