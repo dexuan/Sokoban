@@ -381,13 +381,17 @@ public class Sokoban {
 						}
 					}
 					if(temp==0){
-						int goal=0;
+						int goal376=0;
+						int case16=0;
 						for(int m=0;m<N;m++){
 							if(map[m][j]==3||map[m][j]==7){
-								goal++;
+								goal376++;
+							}
+							if(map[m][j]==1){
+								case16++;
 							}
 						}
-						if(goal==0){
+						if(goal376<case16){
 							return "LeftWallGameOver";
 						}
 					}
@@ -400,14 +404,18 @@ public class Sokoban {
 						}
 					}
 					if(temp==0){
-						int goal=0;
+						int goal376=0;
+						int case16=0;
 						for(int m=0;m<N;m++){
 							if(map[m][j]==3||map[m][j]==7){
-								goal++;
+								goal376++;
+							}
+							if(map[m][j]==1){
+								case16++;
 							}
 						}
-						if(goal==0){
-							return "RightWallGameOver"+i+j+goal;
+						if(goal376<case16){
+							return "RightWallGameOver";
 						}
 					}
 					//ÌùÉÏ±Ú
@@ -418,13 +426,17 @@ public class Sokoban {
 						}
 					}
 					if(temp==0){
-						int goal=0;
+						int goal376=0;
+						int case16=0;
 						for(int m=0;m<N;m++){
 							if(map[i][m]==3||map[i][m]==7){
-								goal++;
+								goal376++;
+							}
+							if(map[i][m]==1){
+								case16++;
 							}
 						}
-						if(goal==0){
+						if(goal376<case16){
 							return "UpWallGameOver";
 						}
 					}
@@ -436,13 +448,17 @@ public class Sokoban {
 						}
 					}
 					if(temp==0){
-						int goal=0;
+						int goal376=0;
+						int case16=0;
 						for(int m=0;m<N;m++){
 							if(map[i][m]==3||map[i][m]==7){
-								goal++;
+								goal376++;
+							}
+							if(map[i][m]==1){
+								case16++;
 							}
 						}
-						if(goal==0){
+						if(goal376<case16){
 							return "DownWallGameOver";
 						}
 					}
