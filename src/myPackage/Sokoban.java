@@ -106,31 +106,31 @@ public class Sokoban {
 		}
 		
 		/*
-		 * 0£º¿ÕÆø
-		 * 1£ºÏä×Ó
-		 * 2£ºÈËÎï
-		 * 3£ºÄ¿±ê£¨Ä¿±êÎ»ÖÃ£©
-		 * 4£ºÊ¯Í·£¨Ç½±Ú£©
-		 * 5£ºÍâ²¿£¨µØÍ¼Íâ²¿£©
-		 * 6£ºĞÇĞÇ£¨Ïä×ÓÔÚÄ¿±êÉÏ£©
-		 * 7£º³¬ÈË£¨ÈËÎïÔÚÄ¿±êÉÏ£©
+		 * 0ï¼šç©ºæ°”
+		 * 1ï¼šç®±å­
+		 * 2ï¼šäººç‰©
+		 * 3ï¼šç›®æ ‡ï¼ˆç›®æ ‡ä½ç½®ï¼‰
+		 * 4ï¼šçŸ³å¤´ï¼ˆå¢™å£ï¼‰
+		 * 5ï¼šå¤–éƒ¨ï¼ˆåœ°å›¾å¤–éƒ¨ï¼‰
+		 * 6ï¼šæ˜Ÿæ˜Ÿï¼ˆç®±å­åœ¨ç›®æ ‡ä¸Šï¼‰
+		 * 7ï¼šè¶…äººï¼ˆäººç‰©åœ¨ç›®æ ‡ä¸Šï¼‰
 		 * */
 		/*
-		 ÈËÎï ¿ÕÆø			20		02	¿É
-		 ÈËÎï Ä¿±ê			23		07	¿É
-		 ÈËÎï Ïä×Ó ¿ÕÆø		210		021	¿É
-		 ÈËÎï Ïä×Ó Ä¿±ê		213		026	¿É
-		 ÈËÎï ĞÇĞÇ ¿ÕÆø		260		071	¿É
-		 ÈËÎï ĞÇĞÇ Ä¿±ê		263		076	¿É
+		 äººç‰© ç©ºæ°”			20		02	å¯
+		 äººç‰© ç›®æ ‡			23		07	å¯
+		 äººç‰© ç®±å­ ç©ºæ°”		210		021	å¯
+		 äººç‰© ç®±å­ ç›®æ ‡		213		026	å¯
+		 äººç‰© æ˜Ÿæ˜Ÿ ç©ºæ°”		260		071	å¯
+		 äººç‰© æ˜Ÿæ˜Ÿ ç›®æ ‡		263		076	å¯
 		 
-		 ³¬ÈË ¿ÕÆø			70		32	¿É
-		 ³¬ÈË Ä¿±ê			73		37	¿É
-		 ³¬ÈË Ïä×Ó ¿ÕÆø		710		321	¿É
-		 ³¬ÈË Ïä×Ó Ä¿±ê		713		326	¿É
-		 ³¬ÈË ĞÇĞÇ ¿ÕÆø		760		371	¿É
-		 ³¬ÈË ĞÇĞÇ Ä¿±ê		763		376	¿É
+		 è¶…äºº ç©ºæ°”			70		32	å¯
+		 è¶…äºº ç›®æ ‡			73		37	å¯
+		 è¶…äºº ç®±å­ ç©ºæ°”		710		321	å¯
+		 è¶…äºº ç®±å­ ç›®æ ‡		713		326	å¯
+		 è¶…äºº æ˜Ÿæ˜Ÿ ç©ºæ°”		760		371	å¯
+		 è¶…äºº æ˜Ÿæ˜Ÿ ç›®æ ‡		763		376	å¯
 		 
-		 ÆäÓà¶¼²»¿É*/
+		 å…¶ä½™éƒ½ä¸å¯*/
 		
 		if(In[0]==2&In[1]==0){Out[0]=0;Out[1]=2;return Out;}
 		if(In[0]==2&In[1]==3){Out[0]=0;Out[1]=7;return Out;}
@@ -210,7 +210,7 @@ public class Sokoban {
 		case 1:return left();
 		case 2:return up();
 		case 3:return right();
-		default:System.out.println("goSwitchÓï¾ä±¨´í");break;
+		default:System.out.println("goSwitchè¯­å¥æŠ¥é”™");break;
 		}
 		
 		return false;
@@ -229,7 +229,7 @@ public class Sokoban {
 		int columnT = columnOfCase;
 		
 		if(map[lineOfCase][columnOfCase]!=1&&map[lineOfCase][columnOfCase]!=6){
-			System.out.println("avatarCanPushTheCase·½·¨±¨´í");
+			System.out.println("avatarCanPushTheCaseæ–¹æ³•æŠ¥é”™");
 			return false;
 		}
 		
@@ -239,12 +239,12 @@ public class Sokoban {
 		case 1:columnA++;columnT--;break;
 		case 2:lineA++;lineT--;break;
 		case 3:columnA--;columnT++;break;
-		default:System.out.println("avatarCanPushTheCase±¨´í");
+		default:System.out.println("avatarCanPushTheCaseæŠ¥é”™");
 		}
 		
 		if(mapAvatar[lineA][columnA]!=2&&mapAvatar[lineA][columnA]!=7)return false;
 		if(mapAvatar[lineT][columnT]!=2&&mapAvatar[lineT][columnT]!=7&&mapAvatar[lineT][columnT]!=0&&mapAvatar[lineT][columnT]!=3)return false;
-		//µ½Õâ¾ÍËµÃ÷ÄÜÍÆ
+		//åˆ°è¿™å°±è¯´æ˜èƒ½æ¨
 		
 		if(map[lineA][columnA]==0||map[lineA][columnA]==3){
 			if(map[line][column]==2){
@@ -252,7 +252,7 @@ public class Sokoban {
 			}else if(map[line][column]==7){
 				map[line][column]=3;
 			}else{
-				System.out.println("±¨´í");
+				System.out.println("æŠ¥é”™");
 			}
 			
 			
@@ -262,7 +262,7 @@ public class Sokoban {
 			}else if(mapAvatar[lineA][columnA]==7){
 				map[lineA][columnA]=7;
 			}else{
-				System.out.println("±¨´í");
+				System.out.println("æŠ¥é”™");
 			}
 			
 			line = lineA;
@@ -297,7 +297,7 @@ public class Sokoban {
 		sokobanInfo = sokobanInfo();
 	}
 	private boolean isComplete(){
-		int temp = 0;//Ïä×Ó¼ÆÊı
+		int temp = 0;//ç®±å­è®¡æ•°
 		for(int i=0;i<N;i++){
 			for(int j=0;j<N;j++){
 				if(map[i][j]==1)temp++;
@@ -314,7 +314,7 @@ public class Sokoban {
 		if(isComplete()){
 			return "Complete";
 		}
-		//ÏÂÃæ¼ì²éÊÇ·ñÓĞ2*2ĞÍËÀºúÍ¬
+		//ä¸‹é¢æ£€æŸ¥æ˜¯å¦æœ‰2*2å‹æ­»èƒ¡åŒ
 		for(int i=1;i<N-1;i++){
 			for(int j=1;j<N-1;j++){
 				int temp = 0;
@@ -334,7 +334,7 @@ public class Sokoban {
 				}
 			}
 		}
-		//ÏÂÃæ¼ì²éÊÇ·ñÓĞ3*3»Ø×ÖĞÍËÀºúÍ¬
+		//ä¸‹é¢æ£€æŸ¥æ˜¯å¦æœ‰3*3å›å­—å‹æ­»èƒ¡åŒ
 		for(int i=1;i<N-2;i++){
 			for(int j=1;j<N-2;j++){
 				int temp = 0;
@@ -367,13 +367,13 @@ public class Sokoban {
 		
 		
 		
-		//ÏÂÃæ¼ì²âÌù±ßĞÍËÀºúÍ¬
+		//ä¸‹é¢æ£€æµ‹è´´è¾¹å‹æ­»èƒ¡åŒ
 		for(int i=0;i<N;i++){
 			for(int j=0;j<N;j++){
 				if(map[i][j]==1){
 					int temp = 0;
 					
-					//Ìù×ó±Ú
+					//è´´å·¦å£
 					temp=0;
 					for(int k=0;k<N;k++){
 						for(int l=0;l<j;l++){
@@ -396,7 +396,7 @@ public class Sokoban {
 						}
 					}
 
-					//ÌùÓÒ±Ú
+					//è´´å³å£
 					temp=0;
 					for(int k=0;k<N;k++){
 						for(int l=j+1;l<N;l++){
@@ -418,7 +418,7 @@ public class Sokoban {
 							return "RightWallGameOver";
 						}
 					}
-					//ÌùÉÏ±Ú
+					//è´´ä¸Šå£
 					temp=0;
 					for(int k=0;k<i;k++){
 						for(int l=0;l<N;l++){
@@ -440,7 +440,7 @@ public class Sokoban {
 							return "UpWallGameOver";
 						}
 					}
-					//ÌùÏÂ±Ú
+					//è´´ä¸‹å£
 					temp=0;
 					for(int k=i+1;k<N;k++){
 						for(int l=0;l<N;l++){
@@ -484,14 +484,14 @@ public class Sokoban {
 			for(int j=1;j<N;j++){
 				switch(map[i][j]){
 				case 0:System.out.print("  ");break;
-				case 1:System.out.print("¡õ ");break;
-				case 2:System.out.print("¡â ");break;
-				case 3:System.out.print("¡Á ");break;
-				case 4:System.out.print("¨ˆ¨ˆ");break;
+				case 1:System.out.print("â–¡ ");break;
+				case 2:System.out.print("â™€ ");break;
+				case 3:System.out.print("Ã— ");break;
+				case 4:System.out.print("â–“â–“");break;
 				case 5:System.out.print("  ");break;
 				case 6:System.out.print("@ ");break;
-				case 7:System.out.print("¡á ");break;
-				default:System.out.println("µØÍ¼Êä³öswitchÓï¾ä±¨´í");break;
+				case 7:System.out.print("â™‚ ");break;
+				default:System.out.println("åœ°å›¾è¾“å‡ºswitchè¯­å¥æŠ¥é”™");break;
 				}
 			}
 			System.out.print("\n");
@@ -502,14 +502,14 @@ public class Sokoban {
 			for(int j=1;j<N;j++){
 				switch(mapAvatar[i][j]){
 				case 0:System.out.print("  ");break;
-				case 1:System.out.print("¡õ ");break;
-				case 2:System.out.print("¡â ");break;
-				case 3:System.out.print("¡Á ");break;
-				case 4:System.out.print("¨ˆ¨ˆ");break;
+				case 1:System.out.print("â–¡ ");break;
+				case 2:System.out.print("â™€ ");break;
+				case 3:System.out.print("Ã— ");break;
+				case 4:System.out.print("â–“â–“");break;
 				case 5:System.out.print("  ");break;
 				case 6:System.out.print("@ ");break;
-				case 7:System.out.print("¡á ");break;
-				default:System.out.println("µØÍ¼Êä³öswitchÓï¾ä±¨´í");break;
+				case 7:System.out.print("â™‚ ");break;
+				default:System.out.println("åœ°å›¾è¾“å‡ºswitchè¯­å¥æŠ¥é”™");break;
 				}
 			}
 			System.out.print("\n");

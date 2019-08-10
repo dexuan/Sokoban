@@ -1,6 +1,6 @@
 #推箱子最佳答案
 
-![dexuan](Sokoban.png)
+![dexuan](images/Sokoban.png)
 
 ##这段代码可以做什么？
 
@@ -27,7 +27,7 @@
 
 现在这段代码还十分粗糙，比如下面这个地图似乎就没算出来，不过就先这样吧。
 
-![dexuan](Sokoban2.png)
+![dexuan](images/Sokoban2.png)
 
 		String str=""	
 				+ "44444445"

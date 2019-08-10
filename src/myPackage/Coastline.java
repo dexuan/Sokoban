@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Coastline {
 	private int Y = Constant.Y;
 	@SuppressWarnings("static-access")
-	private int C = new Constant().C;//±ØĞënew
+	private int C = new Constant().C;//å¿…é¡»new
 	public Sokoban[] mySokoban= new Sokoban[Y];
 
 	int step = -1;
@@ -30,7 +30,7 @@ public class Coastline {
 		}
 		mySokoban[0].setMapAndLaunchAvatar(new Constant().initialMap);
 		mySokoban[0].printMap();
-		System.out.println("ÕıÔÚÑ°ÕÒ¡­¡­");
+		System.out.println("æ­£åœ¨å¯»æ‰¾â€¦â€¦");
 		
 		step = 1;
 		direction4C = 0;
@@ -62,9 +62,9 @@ public class Coastline {
 				
 				//
 //				mySokoban[step].printMapAvastar();
-//				System.out.println("Ñ­»·"+i);
-//				System.out.println("²½ÊıÎª£º"+step+"·½ÏòÎª£º"+direction4C);
-//				System.out.println("ÅĞ¶¨Îª"+info+"\n³É»·£¿£º"+isACycle);
+//				System.out.println("å¾ªç¯"+i);
+//				System.out.println("æ­¥æ•°ä¸ºï¼š"+step+"æ–¹å‘ä¸ºï¼š"+direction4C);
+//				System.out.println("åˆ¤å®šä¸º"+info+"\næˆç¯ï¼Ÿï¼š"+isACycle);
 				//S.nextLine();
 				//
 				
@@ -81,7 +81,7 @@ public class Coastline {
 					if(newKey()){
 						timeLength = System.currentTimeMillis()-time;
 						
-						//System.out.println("ÒÑ¾­ÕÒµ½Ò»ÖÖ´ğ°¸£¬ÊÇ·ñÑ°ÕÒ¸ü¶ÌµÄ´ğ°¸£¿\n£¨ÊäÈë¡°y¡±¼ÌĞøÑ°ÕÒ£¬ÊäÈë±ğµÄÖÕÖ¹Ñ°ÕÒ²¢ÑİÊ¾´ğ°¸£©");
+						//System.out.println("å·²ç»æ‰¾åˆ°ä¸€ç§ç­”æ¡ˆï¼Œæ˜¯å¦å¯»æ‰¾æ›´çŸ­çš„ç­”æ¡ˆï¼Ÿ\nï¼ˆè¾“å…¥â€œyâ€ç»§ç»­å¯»æ‰¾ï¼Œè¾“å…¥åˆ«çš„ç»ˆæ­¢å¯»æ‰¾å¹¶æ¼”ç¤ºç­”æ¡ˆï¼‰");
 						//if(S.nextLine().equals("y")==false){
 							break;
 						//}
@@ -90,25 +90,25 @@ public class Coastline {
 					step++;
 					direction4C=0;
 					continue;
-				}else{//±íÃ÷ÍÆ³ÉÁËËÀ¾Ö
+				}else{//è¡¨æ˜æ¨æˆäº†æ­»å±€
 					changeDirectionAndStep();
 					continue;
 				}
-			}else{//±íÃ÷Ã»ÍÆ¶¯
+			}else{//è¡¨æ˜æ²¡æ¨åŠ¨
 				changeDirectionAndStep();
 				continue;
 			}
 				
 		}
 		if(key[0][0]<0){
-			System.out.println("Î´ÕÒµ½´ğ°¸");
+			System.out.println("æœªæ‰¾åˆ°ç­”æ¡ˆ");
 		}
 		else{
-			System.out.println("ÓÃÊ±"+timeLength/1000+"ÃëÕÒµ½µÚÒ»Ìõ´ğ°¸");
-			System.out.println("×î¶Ì´ğ°¸µÄ²½ÊıÎª£º"+key[0][0]+"²½");
-			System.out.println("2Ãëºó¿ªÊ¼ÑİÊ¾");
+			System.out.println("ç”¨æ—¶"+timeLength/1000+"ç§’æ‰¾åˆ°ç¬¬ä¸€æ¡ç­”æ¡ˆ");
+			System.out.println("æœ€çŸ­ç­”æ¡ˆçš„æ­¥æ•°ä¸ºï¼š"+key[0][0]+"æ­¥");
+			System.out.println("2ç§’åå¼€å§‹æ¼”ç¤º");
 			for(int j=0;j<20;j++){
-				System.out.print("¨„");
+				System.out.print("â–Œ");
 				try {
 					Thread.sleep(100);
 				} catch (InterruptedException e) {
@@ -143,7 +143,7 @@ public class Coastline {
 		for(i=1;i<=step;i++){
 			key[keyNum][i]=mySokoban[i].getDirection4C();
 		}
-		key[keyNum][0]=i-1;//[0]ÓÃÓÚ¼ÇÂ¼¸Ã´ğ°¸µÄ³¤¶È
+		key[keyNum][0]=i-1;//[0]ç”¨äºè®°å½•è¯¥ç­”æ¡ˆçš„é•¿åº¦
 		if(keyNum!=0&&key[keyNum][0]<key[0][0]){
 			for(int k=0;k<Y;k++){
 				key[0][k]=key[keyNum][k];
